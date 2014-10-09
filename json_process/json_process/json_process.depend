@@ -1,0 +1,122 @@
+# depslib dependency file v1.0
+1412684482 source:d:\zicestore\github\userprofile\json_process\json_process\src\json_reader.cpp
+	<reader.h>
+	<value.h>
+	<utility>
+	<cstdio>
+	<cassert>
+	<cstring>
+	<iostream>
+	<stdexcept>
+
+1268379096 d:\zicestore\github\userprofile\json_process\json_process\include\reader.h
+	"features.h"
+	"value.h"
+	<deque>
+	<stack>
+	<string>
+	<iostream>
+
+1268379096 d:\zicestore\github\userprofile\json_process\json_process\include\features.h
+	"forwards.h"
+
+1268379096 d:\zicestore\github\userprofile\json_process\json_process\include\forwards.h
+	"config.h"
+
+1268379096 d:\zicestore\github\userprofile\json_process\json_process\include\config.h
+	<cpptl/config.h>
+
+1268379096 d:\zicestore\github\userprofile\json_process\json_process\include\value.h
+	"forwards.h"
+	<string>
+	<vector>
+	<map>
+	<cpptl/smallmap.h>
+	<cpptl/forwards.h>
+
+1412685091 source:d:\zicestore\github\userprofile\json_process\json_process\src\json_value.cpp
+	<iostream>
+	<value.h>
+	<writer.h>
+	<utility>
+	<stdexcept>
+	<cstring>
+	<cassert>
+	<cpptl/conststring.h>
+	<cstddef>
+	"json_batchallocator.h"
+	"json_internalarray.inl"
+	"json_internalmap.inl"
+	"json_valueiterator.inl"
+
+1268379096 d:\zicestore\github\userprofile\json_process\json_process\include\writer.h
+	"value.h"
+	<vector>
+	<string>
+	<iostream>
+
+1268379096 d:\zicestore\github\userprofile\json_process\json_process\include\json_batchallocator.h
+	<stdlib.h>
+	<assert.h>
+
+1268379096 d:\zicestore\github\userprofile\json_process\json_process\src\json_internalarray.inl
+
+1268379096 d:\zicestore\github\userprofile\json_process\json_process\src\json_internalmap.inl
+
+1268379096 d:\zicestore\github\userprofile\json_process\json_process\src\json_valueiterator.inl
+
+1412685158 source:d:\zicestore\github\userprofile\json_process\json_process\src\json_writer.cpp
+	<writer.h>
+	<utility>
+	<assert.h>
+	<stdio.h>
+	<string.h>
+	<iostream>
+	<sstream>
+	<iomanip>
+
+1268379096 source:d:\zicestore\github\userprofile\json_process\json_process\src\test\jsontest.cpp
+	"jsontest.h"
+	<stdio.h>
+	<string>
+	<crtdbg.h>
+	<windows.h>
+
+1412685433 d:\zicestore\github\userprofile\json_process\json_process\src\test\jsontest.h
+	<config.h>
+	<stdio.h>
+	<deque>
+	<string>
+
+1412686990 source:d:\zicestore\github\userprofile\json_process\json_process\src\test\main.cpp
+	<json.h>
+	"jsontest.h"
+
+1268379096 d:\zicestore\github\userprofile\json_process\json_process\include\json.h
+	"autolink.h"
+	"value.h"
+	"reader.h"
+	"writer.h"
+	"features.h"
+
+1268379096 d:\zicestore\github\userprofile\json_process\json_process\include\autolink.h
+	"config.h"
+	<cpptl/cpptl_autolink.h>
+	"autolink.h"
+
+1412686990 source:d:\zicestore\github\userprofile\json_process\json_process\src\test\f_main.cpp
+	<json.h>
+	"jsontest.h"
+
+1412843434 source:d:\zicestore\github\userprofile\json_process\json_process\src\main.cpp
+	<json.h>
+	<iostream>
+	<string>
+	<utility>
+	<iostream>
+	<fstream>
+	<sstream>
+	<sys/types.h>
+	<dirent.h>
+	<typeinfo>
+

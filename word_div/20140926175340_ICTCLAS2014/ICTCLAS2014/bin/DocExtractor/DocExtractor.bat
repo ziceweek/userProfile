@@ -1,0 +1,1 @@
+DocExtractorSample.exe ..\..\test\docs

@@ -1,0 +1,10 @@
+/*while(one_doc_itr!=(*all_doc_itr).end()){
+	  cout<<"进入循环2"<<endl;
+	  int num = dict[one_doc_itr->first];
+	  string str = num+":"+one_doc_itr->second;
+	  output_file<<("string");
+	  cout<<num+":"+one_doc_itr->second<<endl;
+	  one_doc_itr++;
+      }
+      output_file<<"\n";
+      all_doc_itr++;*/

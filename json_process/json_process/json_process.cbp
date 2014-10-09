@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="json_process" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/json_process" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+					<Add directory="include" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/json_process" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add directory="include" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+		</Compiler>
+		<Unit filename="include/autolink.h" />
+		<Unit filename="include/config.h" />
+		<Unit filename="include/features.h" />
+		<Unit filename="include/forwards.h" />
+		<Unit filename="include/json.h" />
+		<Unit filename="include/json_batchallocator.h" />
+		<Unit filename="include/reader.h" />
+		<Unit filename="include/test.h" />
+		<Unit filename="include/value.h" />
+		<Unit filename="include/writer.h" />
+		<Unit filename="src/json_internalarray.inl" />
+		<Unit filename="src/json_internalmap.inl" />
+		<Unit filename="src/json_reader.cpp" />
+		<Unit filename="src/json_value.cpp" />
+		<Unit filename="src/json_valueiterator.inl" />
+		<Unit filename="src/json_writer.cpp" />
+		<Unit filename="src/main.cpp" />
+		<Unit filename="src/read_in_all_the_text.cpp">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="src/sconscript" />
+		<Unit filename="src/test/f_main.cpp" />
+		<Unit filename="src/test/jsontest.cpp" />
+		<Unit filename="src/test/jsontest.h" />
+		<Unit filename="src/test/sconscript" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
