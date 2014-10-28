@@ -1,6 +1,7 @@
-#ifndef WEIBOENTITY  _H
-#define WEIBOENTITY  _H
-
+#ifndef WEIBOENTITY_H
+#define WEIBOENTITY_H
+#include <string>
+using namespace std;
 //all the info from user
 class WeiboEntity
 {
@@ -32,9 +33,9 @@ class WeiboEntity
 
         string tag;
 
-        string[] follower;
-        string[] follow;
-        string[] weibo;
+        string follower[];
+        string follow[];
+        string weibo[];
 
 
 };

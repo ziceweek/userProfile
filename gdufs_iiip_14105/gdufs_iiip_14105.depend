@@ -1,0 +1,44 @@
+# depslib dependency file v1.0
+1414249866 source:/home/zice/userProfile/gdufs_iiip_14105/main.cpp
+	<iostream>
+	<databaseAccess.h>
+
+1414250058 /home/zice/userProfile/gdufs_iiip_14105/include/databaseAccess.h
+	<string>
+	<sys/socket.h>
+	<mysql/mysql.h>
+	"include/databaseAccess.h"
+
+1414240043 source:/home/zice/userProfile/gdufs_iiip_14105/src/personalInfo.cpp
+	"personalInfo.h"
+
+1414248422 /home/zice/userProfile/gdufs_iiip_14105/include/personalInfo.h
+
+1414250174 source:/home/zice/userProfile/gdufs_iiip_14105/src/databaseAccess.cpp
+	"../include/databaseAccess.h"
+	<string>
+	<iostream>
+
+1414239691 source:/home/zice/userProfile/gdufs_iiip_14105/src/userProfile.cpp
+	"userProfile.h"
+
+1414250201 /home/zice/userProfile/gdufs_iiip_14105/include/userProfile.h
+
+1414237710 source:/home/zice/userProfile/gdufs_iiip_14105/src/WeiboEntity  .cpp
+	"WeiboEntity  .h"
+
+1414250313 /home/zice/userProfile/gdufs_iiip_14105/include/WeiboEntity  .h
+	<string>
+
+1414237710 source:/home/zice/userProfile/gdufs_iiip_14105/src/WeiboEntity_simplify.cpp
+	"WeiboEntity_simplify.h"
+
+1414250339 /home/zice/userProfile/gdufs_iiip_14105/include/WeiboEntity_simplify.h
+	<string>
+
+1414240529 source:/home/zice/userProfile/gdufs_iiip_14105/src/weiboUser.cpp
+	"weiboUser.h"
+
+1414250376 /home/zice/userProfile/gdufs_iiip_14105/include/weiboUser.h
+	"personalInfo.h"
+

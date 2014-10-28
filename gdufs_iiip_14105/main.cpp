@@ -1,9 +1,14 @@
 #include <iostream>
-
+#include <databaseAccess.h>
 using namespace std;
 
 int main()
 {
-    cout << "Hello world!" << endl;
-    return 0;
+    databaseAccess dba;
+    dba.connect_db();
+    dba.query("select * from t1;");
+    dba.getResult();
+    dba.close();
+
+
 }

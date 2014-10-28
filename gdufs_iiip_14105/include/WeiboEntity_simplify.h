@@ -1,6 +1,7 @@
 #ifndef WEIBOENTITY_SIMPLIFY_H
 #define WEIBOENTITY_SIMPLIFY_H
-
+#include <string>
+using namespace std;
 
 class WeiboEntity_simplify
 {
@@ -15,7 +16,7 @@ class WeiboEntity_simplify
         int follower_count;
         int weibo_count;
         string introdution;
-        string[] label;
+        string label[];
         int gender;
         string school;
         string company;
