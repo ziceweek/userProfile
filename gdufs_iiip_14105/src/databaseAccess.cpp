@@ -23,6 +23,7 @@ databaseAccess::~databaseAccess()
     //dtor
 }
 
+
 bool databaseAccess::connect_db()
 {
      if(!mysql_real_connect(&mysql, hostname.c_str(), username.c_str(), password.c_str(), dbname.c_str(), portnum, socketname, flags))
@@ -59,7 +60,9 @@ bool databaseAccess::query(string sql)
 
      mysql_close(&mysql);
 }
-void databaseAccess::getResult()
+
+
+void databaseAccess::showResult()
 {
     MYSQL_RES *result;
     MYSQL_ROW row;
@@ -80,9 +83,35 @@ void databaseAccess::getResult()
                 cout<<endl;
             }
         }
-    }
     mysql_free_result(result);
+    }
 }
+
+int databaseAccess::getResult(vector<string> *doc_pack)
+{
+    MYSQL_RES *result;
+    MYSQL_ROW row;
+    result = mysql_store_result(&mysql);
+    if(result==NULL){
+        cout<<"the result is none!"<<endl;
+        return 0;
+    }else{
+        unsigned int i;
+        while((row = mysql_fetch_row(result))!=NULL)
+        {
+            for( i=0;i<mysql_num_fields(result);i++)
+            {
+                if(row[i]==NULL)
+                    break;
+                else{
+                    doc_pack->push_back(row[i]);
+                }
+            }
+        }
+    mysql_free_result(result);
+    }
+    return doc_pack->size();
+    }
 void databaseAccess::close()
 {
     mysql_close(&mysql);

@@ -1,6 +1,7 @@
 #ifndef DATABASEACCESS_H
 #define DATABASEACCESS_H
 #include <string>
+#include <vector>
 #include <sys/socket.h>
 #include <mysql/mysql.h>
 using namespace std;
@@ -11,7 +12,8 @@ class databaseAccess
         void getDbInfo();
         bool connect_db();
         bool query(string);
-        void  getResult();
+        void  showResult();
+        int  getResult(vector<string> *doc_pack);
         void close();
         virtual ~databaseAccess();
 

@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2007 by
- * 
+ *
  * 	Xuan-Hieu Phan
  *	hieuxuan@ecei.tohoku.ac.jp or pxhieu@gmail.com
  * 	Graduate School of Information Sciences
@@ -32,17 +32,20 @@ class model;
 
 class utils {
 public:
+
+    //the no parameters parse_args,used without command line
+    static int parse_args(model *self);
     // parse command line arguments
     static int parse_args(int argc, char ** argv, model * pmodel);
-    
+
     // read and parse model parameters from <model_name>.others
-    static int read_and_parse(string filename, model * model); 
-    
+    static int read_and_parse(string filename, model * model);
+
     // generate the model name for the current iteration
     // iter = -1 => final model
-    static string generate_model_name(int iter);  
-    
-    // sort    
+    static string generate_model_name(int iter);
+
+    // sort
     static void sort(vector<double> & probs, vector<int> & words);
     static void quicksort(vector<pair<int, double> > & vect, int left, int right);
 };

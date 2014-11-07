@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2007 by
- * 
+ *
  * 	Xuan-Hieu Phan
  *	hieuxuan@ecei.tohoku.ac.jp or pxhieu@gmail.com
  * 	Graduate School of Information Sciences
@@ -40,19 +40,19 @@ public:
     int * words;
     string rawstr;
     int length;
-    
+
     document() {
 	words = NULL;
 	rawstr = "";
-	length = 0;	
+	length = 0;
     }
-    
+
     document(int length) {
 	this->length = length;
 	rawstr = "";
-	words = new int[length];	
+	words = new int[length];
     }
-    
+
     document(int length, int * words) {
 	this->length = length;
 	rawstr = "";
@@ -70,7 +70,7 @@ public:
 	    this->words[i] = words[i];
 	}
     }
-    
+
     document(vector<int> & doc) {
 	this->length = doc.size();
 	rawstr = "";
@@ -88,7 +88,7 @@ public:
 	    this->words[i] = doc[i];
 	}
     }
-    
+
     ~document() {
 	if (words) {
 	    delete words;
@@ -103,21 +103,21 @@ public:
     map<int, int> _id2id; // also used only for inference
     int M; // number of documents
     int V; // number of words
-    
+
     dataset() {
 	docs = NULL;
 	_docs = NULL;
 	M = 0;
 	V = 0;
     }
-    
+
     dataset(int M) {
 	this->M = M;
 	this->V = 0;
-	docs = new document*[M];	
+	docs = new document*[M];
 	_docs = NULL;
-    }   
-    
+    }
+
     ~dataset() {
 	if (docs) {
 	    for (int i = 0; i < M; i++) {
@@ -125,15 +125,15 @@ public:
 	    }
 	}
 	delete docs;
-	
+
 	if (_docs) {
 	    for (int i = 0; i < M; i++) {
-		delete _docs[i];		
+		delete _docs[i];
 	    }
 	}
-	delete _docs;	
+	delete _docs;
     }
-    
+
     void deallocate() {
 	if (docs) {
 	    for (int i = 0; i < M; i++) {
@@ -151,25 +151,25 @@ public:
 	delete _docs;
 	_docs = NULL;
     }
-    
+
     void add_doc(document * doc, int idx) {
 	if (0 <= idx && idx < M) {
 	    docs[idx] = doc;
 	}
-    }   
-    
+    }
+
     void _add_doc(document * doc, int idx) {
 	if (0 <= idx && idx < M) {
 	    _docs[idx] = doc;
 	}
-    }       
+    }
 
     static int write_wordmap(string wordmapfile, mapword2id * pword2id);
     static int read_wordmap(string wordmapfile, mapword2id * pword2id);
     static int read_wordmap(string wordmapfile, mapid2word * pid2word);
-    
+
     int read_trndata(string dfile, string wordmapfile);
-    int read_trndata_from_db(string dfile, string wordmapfile);
+    int read_trndata2(int doc_pack_size,vector<string> *doc_pack, string wordmapfile);
     int read_newdata(string dfile, string wordmapfile);
     int read_newdata_withrawstrs(string dfile, string wordmapfile);
 };
