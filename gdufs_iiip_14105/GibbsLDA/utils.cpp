@@ -32,12 +32,14 @@
 using namespace std;
 
 //the no parameters parse_args,used without command line
-int utils::parse_args(model *self)
+
+//est model init
+int utils::est_parse_args(model *pmodel)
 {
-    int model_status = MODEL_STATUS_UNKNOWN;
-    string dir = "";
+    int model_status = MODEL_STATUS_EST;
+    //string dir = "";
     string model_name = "";
-    string dfile = "";
+    //string dfile = "";
     double alpha = -1.0;
     double beta = -1.0;
     int K = 0;
@@ -46,61 +48,6 @@ int utils::parse_args(model *self)
     int twords = 0;
     int withrawdata = 0;
 
-    int i = 0;
-    while (i < argc) {
-	string arg = argv[i];
-
-	if (arg == "-est") {
-	    model_status = MODEL_STATUS_EST;
-
-	} else if (arg == "-estc") {
-	    model_status = MODEL_STATUS_ESTC;
-
-	} else if (arg == "-inf") {
-	    model_status = MODEL_STATUS_INF;
-
-	} else if (arg == "-dir") {
-	    dir = argv[++i];
-
-	} else if (arg == "-dfile") {
-	    dfile = argv[++i];
-
-	} else if (arg == "-model") {
-	    model_name = argv[++i];
-
-	} else if (arg == "-alpha") {
-	    alpha = atof(argv[++i]);
-
-	} else if (arg == "-beta") {
-	    beta = atof(argv[++i]);
-
-	} else if (arg == "-ntopics") {
-	    K = atoi(argv[++i]);
-
-	} else if (arg == "-niters") {
-	    niters = atoi(argv[++i]);
-
-	} else if (arg == "-savestep") {
-	    savestep = atoi(argv[++i]);
-
-	} else if (arg == "-twords") {
-	    twords = atoi(argv[++i]);
-
-	} else if (arg == "-withrawdata") {
-	    withrawdata = 1;
-
-	} else {
-	    // any more?
-	}
-
-	i++;
-    }
-
-    if (model_status == MODEL_STATUS_EST) {
-	if (dfile == "") {
-	    printf("Please specify the input data file for model estimation!\n");
-	    return 1;
-	}
 
 	pmodel->model_status = model_status;
 
@@ -131,104 +78,6 @@ int utils::parse_args(model *self)
 	    pmodel->twords = twords;
 	}
 
-	pmodel->dfile = dfile;
-
-	string::size_type idx = dfile.find_last_of("/");
-	if (idx == string::npos) {
-	    pmodel->dir = "./";
-	} else {
-	    pmodel->dir = dfile.substr(0, idx + 1);
-	    pmodel->dfile = dfile.substr(idx + 1, dfile.size() - pmodel->dir.size());
-	    printf("dir = %s\n", pmodel->dir.c_str());
-	    printf("dfile = %s\n", pmodel->dfile.c_str());
-	}
-    }
-
-    if (model_status == MODEL_STATUS_ESTC) {
-	if (dir == "") {
-	    printf("Please specify model directory!\n");
-	    return 1;
-	}
-
-	if (model_name == "") {
-	    printf("Please specify model name upon that you want to continue estimating!\n");
-	    return 1;
-	}
-
-	pmodel->model_status = model_status;
-
-	if (dir[dir.size() - 1] != '/') {
-	    dir += "/";
-	}
-	pmodel->dir = dir;
-
-	pmodel->model_name = model_name;
-
-	if (niters > 0) {
-	    pmodel->niters = niters;
-	}
-
-	if (savestep > 0) {
-	    pmodel->savestep = savestep;
-	}
-
-	if (twords > 0) {
-	    pmodel->twords = twords;
-	}
-
-	// read <model>.others file to assign values for ntopics, alpha, beta, etc.
-	if (read_and_parse(pmodel->dir + pmodel->model_name + pmodel->others_suffix, pmodel)) {
-	    return 1;
-	}
-    }
-
-    if (model_status == MODEL_STATUS_INF) {
-	if (dir == "") {
-	    printf("Please specify model directory please!\n");
-	    return 1;
-	}
-
-	if (model_name == "") {
-	    printf("Please specify model name for inference!\n");
-	    return 1;
-	}
-
-	if (dfile == "") {
-	    printf("Please specify the new data file for inference!\n");
-	    return 1;
-	}
-
-	pmodel->model_status = model_status;
-
-	if (dir[dir.size() - 1] != '/') {
-	    dir += "/";
-	}
-	pmodel->dir = dir;
-
-	pmodel->model_name = model_name;
-
-	pmodel->dfile = dfile;
-
-	if (niters > 0) {
-	    pmodel->niters = niters;
-	} else {
-	    // default number of Gibbs sampling iterations for doing inference
-	    pmodel->niters = 20;
-	}
-
-	if (twords > 0) {
-	    pmodel->twords = twords;
-	}
-
-	if (withrawdata > 0) {
-	    pmodel->withrawstrs = withrawdata;
-	}
-
-	// read <model>.others file to assign values for ntopics, alpha, beta, etc.
-	if (read_and_parse(pmodel->dir + pmodel->model_name + pmodel->others_suffix, pmodel)) {
-	    return 1;
-	}
-    }
 
     if (model_status == MODEL_STATUS_UNKNOWN) {
 	printf("Please specify the task you would like to perform (-est/-estc/-inf)!\n");

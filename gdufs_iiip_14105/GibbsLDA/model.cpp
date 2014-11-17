@@ -160,7 +160,7 @@ void model::set_default_values() {
     others_suffix = ".others";
     twords_suffix = ".twords";
 
-    dir = "./";
+    dir = "./result/";
     dfile = "trndocs.dat";
     model_name = "model-final";
     model_status = MODEL_STATUS_UNKNOWN;
@@ -170,13 +170,13 @@ void model::set_default_values() {
 
     M = 0;
     V = 0;
-    K = 100;
+    K = 20;
     alpha = 50.0 / K;
     beta = 0.1;
     niters = 2000;
     liter = 0;
-    savestep = 200;
-    twords = 0;
+    savestep = 2000;
+    twords = 10;
     withrawstrs = 0;
 
     p = NULL;
@@ -202,7 +202,7 @@ void model::set_default_values() {
 //the no parameters parse_args,used without command line
 int model::parse_args()
 {
-    return utils::parse_args(this);
+    return utils::est_parse_args(this);
 }
 
 int model::parse_args(int argc, char ** argv) {
@@ -218,6 +218,35 @@ int model::init(int argc, char ** argv) {
     if (model_status == MODEL_STATUS_EST) {
 	// estimating the model from scratch
 	if (init_est()) {
+	    return 1;
+	}
+
+    } else if (model_status == MODEL_STATUS_ESTC) {
+	// estimating the model from a previously estimated one
+	if (init_estc()) {
+	    return 1;
+	}
+
+    } else if (model_status == MODEL_STATUS_INF) {
+	// do inference
+	if (init_inf()) {
+	    return 1;
+	}
+    }
+
+    return 0;
+}
+
+//init without command line parameter
+int model::init(vector<string> *doc_pack) {
+    // call parse_args
+    if (parse_args()) {
+	return 1;
+    }
+
+    if (model_status == MODEL_STATUS_EST) {
+	// estimating the model from scratch
+	if (init_est(doc_pack)) {
 	    return 1;
 	}
 

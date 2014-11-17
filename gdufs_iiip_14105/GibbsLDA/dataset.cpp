@@ -78,7 +78,6 @@ int dataset::read_wordmap(string wordmapfile, mapword2id * pword2id) {
 
     return 0;
 }
-
 int dataset::read_wordmap(string wordmapfile, mapid2word * pid2word) {
     pid2word->clear();
 
@@ -110,6 +109,7 @@ int dataset::read_wordmap(string wordmapfile, mapid2word * pid2word) {
 
     return 0;
 }
+
 
 int dataset::read_trndata2(vector<string> *doc_pack, string wordmapfile) {
     mapword2id word2id;

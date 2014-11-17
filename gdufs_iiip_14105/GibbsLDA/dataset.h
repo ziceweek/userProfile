@@ -165,11 +165,12 @@ public:
     }
 
     static int write_wordmap(string wordmapfile, mapword2id * pword2id);
-    static int read_wordmap(string wordmapfile, mapword2id * pword2id);
+
     static int read_wordmap(string wordmapfile, mapid2word * pid2word);
+    static int read_wordmap(string wordmapfile, mapword2id * pword2id);
 
     int read_trndata(string dfile, string wordmapfile);
-    int read_trndata2(int doc_pack_size,vector<string> *doc_pack, string wordmapfile);
+    int read_trndata2(vector<string> *doc_pack, string wordmapfile);
     int read_newdata(string dfile, string wordmapfile);
     int read_newdata_withrawstrs(string dfile, string wordmapfile);
 };

@@ -113,7 +113,8 @@ public:
 
     // initialize the model
     int init(int argc, char ** argv);
-
+    //initialize without parameter
+    int init(vector<string> *doc_pack);
     // load LDA model to continue estimating or to do inference
     int load_model(string model_name);
 
@@ -139,6 +140,8 @@ public:
 
     // init for estimation
     int init_est();
+    //init without parameter
+    int init_est(vector<string> *doc_pack);
     int init_estc();
 
     // estimate LDA model using Gibbs sampling

@@ -5,6 +5,7 @@
 #include <string>
 #include <stdio.h>
 #include <fstream>
+#include "GibbsLDA/model.h"
 using namespace std;
 
 int main()
@@ -26,6 +27,20 @@ int main()
     {
         *doc_pack_itr = prep.segmentation(*doc_pack_itr);
     }
+
+    model lda;
+
+    //char **agrv={"MODEL_STATUS_EST","-dir","dfile","model"};
+    if (lda.init(&doc_pack)) {
+    cout<<"init error"<<endl;
+	return 1;
+    }
+
+    if (lda.model_status == MODEL_STATUS_EST || lda.model_status == MODEL_STATUS_ESTC) {
+	// parameter estimation
+	lda.estimate();
+    }
+
 
 
 

@@ -34,7 +34,7 @@ class utils {
 public:
 
     //the no parameters parse_args,used without command line
-    static int parse_args(model *self);
+    static int est_parse_args(model *self);
     // parse command line arguments
     static int parse_args(int argc, char ** argv, model * pmodel);
 
