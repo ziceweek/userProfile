@@ -170,13 +170,13 @@ void model::set_default_values() {
 
     M = 0;
     V = 0;
-    K = 20;
+    K = 40;
     alpha = 50.0 / K;
     beta = 0.1;
     niters = 2000;
     liter = 0;
-    savestep = 2000;
-    twords = 10;
+    savestep = 500;
+    twords = 40;
     withrawstrs = 0;
 
     p = NULL;
@@ -468,7 +468,6 @@ int model::save_model_twords(string filename) {
 
     return 0;
 }
-
 int model::save_inf_model(string model_name) {
     if (save_inf_model_tassign(dir + model_name + tassign_suffix)) {
 	return 1;

@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1415358049 source:/home/zice/userProfile/gdufs_iiip_14105/main.cpp
+1417016354 source:/home/zice/userProfile/gdufs_iiip_14105/main.cpp
 	<iostream>
 	<databaseAccess.h>
 	"preprocess.h"
@@ -8,6 +8,7 @@
 	<stdio.h>
 	<fstream>
 	"GibbsLDA/model.h"
+	"common.h"
 
 1415193865 /home/zice/userProfile/gdufs_iiip_14105/include/databaseAccess.h
 	<string>
@@ -21,7 +22,7 @@
 
 1414248422 /home/zice/userProfile/gdufs_iiip_14105/include/personalInfo.h
 
-1415194025 source:/home/zice/userProfile/gdufs_iiip_14105/src/databaseAccess.cpp
+1416818256 source:/home/zice/userProfile/gdufs_iiip_14105/src/databaseAccess.cpp
 	"../include/databaseAccess.h"
 	<string>
 	<iostream>
@@ -49,7 +50,7 @@
 1414250376 /home/zice/userProfile/gdufs_iiip_14105/include/weiboUser.h
 	"personalInfo.h"
 
-1415360353 source:/home/zice/userProfile/gdufs_iiip_14105/GibbsLDA/dataset.cpp
+1415778020 source:/home/zice/userProfile/gdufs_iiip_14105/GibbsLDA/dataset.cpp
 	<stdio.h>
 	<stdlib.h>
 	"constants.h"
@@ -63,7 +64,7 @@
 	<string>
 	<vector>
 
-1415544826 /home/zice/userProfile/gdufs_iiip_14105/GibbsLDA/dataset.h
+1415778018 /home/zice/userProfile/gdufs_iiip_14105/GibbsLDA/dataset.h
 	<string>
 	<vector>
 	<map>
@@ -76,7 +77,7 @@
 	"constants.h"
 	"dataset.h"
 
-1415357034 source:/home/zice/userProfile/gdufs_iiip_14105/GibbsLDA/model.cpp
+1417001921 source:/home/zice/userProfile/gdufs_iiip_14105/GibbsLDA/model.cpp
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
@@ -89,12 +90,12 @@
 1415352068 /home/zice/userProfile/gdufs_iiip_14105/GibbsLDA/utils.h
 	<string>
 
-1415001571 source:/home/zice/userProfile/gdufs_iiip_14105/GibbsLDA/strtokenizer.cpp
+1417014404 source:/home/zice/userProfile/gdufs_iiip_14105/GibbsLDA/strtokenizer.cpp
 	<string>
 	<vector>
 	"strtokenizer.h"
 
-1415357310 source:/home/zice/userProfile/gdufs_iiip_14105/GibbsLDA/utils.cpp
+1416989591 source:/home/zice/userProfile/gdufs_iiip_14105/GibbsLDA/utils.cpp
 	<stdio.h>
 	<stdlib.h>
 	<string>
@@ -112,24 +113,38 @@
 	<iostream>
 	<fstream>
 
-1415188982 source:/home/zice/userProfile/gdufs_iiip_14105/GibbsLDA/main_lda.cpp
+1416217721 source:/home/zice/userProfile/gdufs_iiip_14105/GibbsLDA/main_lda.cpp
 	"model.h"
 	<stdio.h>
 
-1415189808 source:/home/zice/userProfile/gdufs_iiip_14105/nlpir/main_nlpir.cpp
+1416992907 source:/home/zice/userProfile/gdufs_iiip_14105/nlpir/main_nlpir.cpp
 	"NLPIR.h"
 	<string>
 	<stdio.h>
 	<iostream>
 	<fstream>
 
-1415194748 /home/zice/userProfile/gdufs_iiip_14105/include/preprocess.h
+1417015173 /home/zice/userProfile/gdufs_iiip_14105/include/preprocess.h
 	"../nlpir/include/NLPIR.h"
 	<string>
+	<vector>
 
 1414499295 /home/zice/userProfile/gdufs_iiip_14105/nlpir/include/NLPIR.h
 
-1415194820 source:/home/zice/userProfile/gdufs_iiip_14105/src/preprocess.cpp
+1417016286 source:/home/zice/userProfile/gdufs_iiip_14105/src/preprocess.cpp
 	"preprocess.h"
+	"common.h"
+	<iostream>
+
+1417016384 /home/zice/userProfile/gdufs_iiip_14105/include/common.h
+	<string>
+	<vector>
+
+1417016121 source:/home/zice/userProfile/gdufs_iiip_14105/src/common.cpp
+	"common.h"
+	<string>
+	<string>
+	<vector>
+	<fstream>
 	<iostream>
 

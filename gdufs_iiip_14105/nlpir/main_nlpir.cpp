@@ -9,6 +9,7 @@ int main_nlpir()
     fstream outputf;
     outputf.open("txtUTF8.txt",fstream::out);
     if(NLPIR_Init(0,UTF8_CODE))//这个地方要记得制定编码
+    //if(NLPIR_Init(0))
     {
         cout<<"init nlpir success!";
     }else{

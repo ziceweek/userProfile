@@ -7,6 +7,8 @@ databaseAccess::databaseAccess()
 {
 
     //ctor
+
+    //weibos
     hostname = "192.168.235.61";
     username = "root";
     password = "";
@@ -15,6 +17,16 @@ databaseAccess::databaseAccess()
     socketname = NULL;
     flags = 0;
     mysql_init(&mysql);
+
+    //new
+//    hostname = "192.168.202.90";
+//    username = "root";
+//    password = "";
+//    dbname = "publicnews";
+//    portnum = 3306;
+//    socketname = NULL;
+//    flags = 0;
+//    mysql_init(&mysql);
 
 }
 

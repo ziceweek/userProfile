@@ -31,7 +31,6 @@ int main_lda(int argc, char ** argv) {
     model lda;
 
     if (lda.init(argc, argv)) {
-	show_help();
 	return 1;
     }
 
