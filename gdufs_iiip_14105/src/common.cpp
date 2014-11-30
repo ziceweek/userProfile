@@ -4,6 +4,7 @@
 #include <vector>
 #include <fstream>
 #include <iostream>
+#include "preprocess.h"
 using namespace std;
 common::common()
 {
@@ -60,6 +61,14 @@ void common::split(vector<string> &result,string str,string seperators)
 }
 
 
+string& common::trim(string &str)
+{
+    if(str.empty())
+        return str;
+    str.erase(0,str.find_first_not_of(" "));
+    str.erase(str.find_last_not_of(" "));
+    return str;
+}
 
 
 

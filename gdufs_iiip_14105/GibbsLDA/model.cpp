@@ -175,8 +175,8 @@ void model::set_default_values() {
     beta = 0.1;
     niters = 2000;
     liter = 0;
-    savestep = 500;
-    twords = 40;
+    savestep = 2000;
+    twords = 30;
     withrawstrs = 0;
 
     p = NULL;

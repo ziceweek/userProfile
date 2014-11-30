@@ -3,6 +3,8 @@
 #include "../nlpir/include/NLPIR.h"
 #include <string>
 #include <vector>
+#include <set>
+#include "common.h"
 using namespace std;
 
 class preprocess
@@ -10,9 +12,11 @@ class preprocess
     public:
         preprocess();
         string segmentation(const string sentence);
-        void removeStopwords(string path);
+        string removeStopwords(string str,string seperators);
+        bool isStopWord(string word);
         void loadUserDict(string path);
         void loadStopWords(string path);
+
         virtual ~preprocess();
 
 
@@ -21,7 +25,7 @@ class preprocess
     protected:
     private:
         string _stopword_dir;
-        vector<string> _stopWords;
+        set<string> _stopWords;
         vector<string> _userDict;
 
 

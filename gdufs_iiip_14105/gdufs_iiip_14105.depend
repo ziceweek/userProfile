@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1417016354 source:/home/zice/userProfile/gdufs_iiip_14105/main.cpp
+1417085527 source:/home/zice/userProfile/gdufs_iiip_14105/main.cpp
 	<iostream>
 	<databaseAccess.h>
 	"preprocess.h"
@@ -77,7 +77,7 @@
 	"constants.h"
 	"dataset.h"
 
-1417001921 source:/home/zice/userProfile/gdufs_iiip_14105/GibbsLDA/model.cpp
+1417060637 source:/home/zice/userProfile/gdufs_iiip_14105/GibbsLDA/model.cpp
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
@@ -124,27 +124,32 @@
 	<iostream>
 	<fstream>
 
-1417015173 /home/zice/userProfile/gdufs_iiip_14105/include/preprocess.h
+1417056674 /home/zice/userProfile/gdufs_iiip_14105/include/preprocess.h
 	"../nlpir/include/NLPIR.h"
 	<string>
 	<vector>
+	<set>
+	"common.h"
 
 1414499295 /home/zice/userProfile/gdufs_iiip_14105/nlpir/include/NLPIR.h
 
-1417016286 source:/home/zice/userProfile/gdufs_iiip_14105/src/preprocess.cpp
+1417085598 source:/home/zice/userProfile/gdufs_iiip_14105/src/preprocess.cpp
 	"preprocess.h"
 	"common.h"
 	<iostream>
+	<fstream>
+	<string>
 
-1417016384 /home/zice/userProfile/gdufs_iiip_14105/include/common.h
+1417055371 /home/zice/userProfile/gdufs_iiip_14105/include/common.h
 	<string>
 	<vector>
 
-1417016121 source:/home/zice/userProfile/gdufs_iiip_14105/src/common.cpp
+1417055592 source:/home/zice/userProfile/gdufs_iiip_14105/src/common.cpp
 	"common.h"
 	<string>
 	<string>
 	<vector>
 	<fstream>
 	<iostream>
+	"preprocess.h"
 
