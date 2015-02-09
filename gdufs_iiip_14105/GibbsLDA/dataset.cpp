@@ -74,6 +74,7 @@ int dataset::read_wordmap(string wordmapfile, mapword2id * pword2id) {
 	pword2id->insert(pair<string, int>(strtok.token(0), atoi(strtok.token(1).c_str())));
     }
 
+
     fclose(fin);
 
     return 0;
@@ -136,10 +137,13 @@ int dataset::read_trndata2(vector<string> *doc_pack, string wordmapfile) {
     int i = 0;
     for(vector<string>::iterator doc_pack_itr = doc_pack->begin();doc_pack_itr!=doc_pack->end();doc_pack_itr++)
     {
+        //cout<<i<<"----------------------"<<*doc_pack_itr<<endl;
         if(i>=M)
             break;
         else{
+            //cout<<*doc_pack_itr<<endl;
             strtokenizer strtok(*doc_pack_itr, " \t\r\n");
+            //strtokenizer strtok(*doc_pack_itr, " ");
             int length = strtok.count_tokens();
             if (length <= 0) {
                 cout<<"Invalid (empty) document!"<<endl;
@@ -147,6 +151,12 @@ int dataset::read_trndata2(vector<string> *doc_pack, string wordmapfile) {
                 M = V = 0;
                 return 1;
             }
+
+            //sometime weibo is too short and after clearing the stopwords and single character,it will be empty,so ignore that
+//            if(length<=0)
+//            {
+//                continue;
+//            }
 
             // allocate new document
             document * pdoc = new document(length);

@@ -52,6 +52,7 @@
 		<Unit filename="GibbsLDA/utils.h" />
 		<Unit filename="include/WeiboEntity  .h" />
 		<Unit filename="include/WeiboEntity_simplify.h" />
+		<Unit filename="include/common.h" />
 		<Unit filename="include/databaseAccess.h" />
 		<Unit filename="include/personalInfo.h" />
 		<Unit filename="include/preprocess.h" />
@@ -123,6 +124,7 @@
 		<Unit filename="nlpir/txtUTF8.txt" />
 		<Unit filename="src/WeiboEntity  .cpp" />
 		<Unit filename="src/WeiboEntity_simplify.cpp" />
+		<Unit filename="src/common.cpp" />
 		<Unit filename="src/databaseAccess.cpp" />
 		<Unit filename="src/personalInfo.cpp" />
 		<Unit filename="src/preprocess.cpp" />

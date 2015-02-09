@@ -8,6 +8,7 @@ class common
     public:
         common();
         static bool read(string dir,vector<string> &pack);
+        static void write(string dir,vector<string> &pack);
         static void split(vector<string> &result,string str,string seperators);
         static void split_rmStopword(vector<string> &result,string str,string seperators);
         static string& trim(string &str);

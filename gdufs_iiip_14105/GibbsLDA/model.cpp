@@ -37,6 +37,7 @@
 #include "utils.h"
 #include "dataset.h"
 #include "model.h"
+#include <iostream>
 
 using namespace std;
 
@@ -170,14 +171,19 @@ void model::set_default_values() {
 
     M = 0;
     V = 0;
-    K = 40;
-    alpha = 50.0 / K;
-    beta = 0.1;
+    K = 15;
+    //alpha = 50.0 / K;
+    //beta = 0.1;
     niters = 2000;
     liter = 0;
     savestep = 2000;
-    twords = 30;
+    twords = 10;
     withrawstrs = 0;
+
+    //wanglianxi
+    //K = 10;
+    alpha = 1;
+    beta = 0.01;
 
     p = NULL;
     z = NULL;
@@ -243,7 +249,7 @@ int model::init(vector<string> *doc_pack) {
     if (parse_args()) {
 	return 1;
     }
-
+    cout<<"init()"<<endl;
     if (model_status == MODEL_STATUS_EST) {
 	// estimating the model from scratch
 	if (init_est(doc_pack)) {

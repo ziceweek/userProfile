@@ -21,24 +21,42 @@ common::~common()
 
 bool common::read(string dir,vector<string> &pack)
 {
-            ifstream file;
+            ifstream infile;
 
-            file.open(dir.c_str(),fstream::in|ios::binary);
+            infile.open(dir.c_str(),fstream::in|ios::binary);
 
-            if(!file){
-                cout<<"error occur when read the file:"<<dir<<endl;
+            if(!infile){
+                cout<<"error occur when read the infile:"<<dir<<endl;
                 return false;
             }
 
             string oneline;
 
-            while(getline(file,oneline)){
+            while(getline(infile,oneline)){
                 pack.push_back(oneline);
 
             }
 
-            file.close();
+            infile.close();
             return true;
+
+}
+void common::write(string dir,vector<string> &pack)
+{
+    ofstream outfile;
+    outfile.open(dir.c_str(),ofstream::out|ofstream::app);
+    if (!outfile) {
+        cout<<"Cannot open file"<<endl;
+        return;
+    }
+
+    for(vector<string>::iterator itr = pack.begin();itr!=pack.end();itr++)
+    {
+        outfile<<*itr<<endl;
+    }
+
+    outfile.close();
+
 
 }
 

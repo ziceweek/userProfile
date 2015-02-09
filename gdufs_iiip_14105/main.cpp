@@ -14,7 +14,7 @@ void read_data_from_db(vector<string> &doc_pack)
 {
     databaseAccess dba;
     dba.connect_db();
-    dba.query("select text from weibo where uid = '1693867981'");
+    dba.query("select text from weibo where uid = '1719813414'");
     //dba.query("select content from snippet where keyword ='柯震东吸毒' ");
     dba.getResult(&doc_pack);
     dba.close();
@@ -40,26 +40,41 @@ int main()
 {
     vector<string> doc_pack;
     /*get weibo text string from database*/
- //   read_data_from_db(doc_pack);
-//    databaseAccess dba;
-//    dba.connect_db();
-//    dba.query("select text from weibo where uid = '1693867981'");
-//    //dba.query("select content from snippet where keyword ='柯震东吸毒' ");
-//    dba.getResult(&doc_pack);
-//    dba.close();
+    //read_data_from_db(doc_pack);
     /*get context from txt or dat file*/
-    read_data_form_file("/home/zice/wanglianxi/微博论文分析UTF8.TXT",doc_pack);
-    int doc_pack_size = doc_pack.size();
-    cout<<"the size of doc_pack:"<<doc_pack_size<<endl;
+    read_data_form_file("/home/zice/wanglianxi/题录信息.txt",doc_pack);
+
 
 
     //segmentation on the weibo text vector
     preprocess prep;
-    for(vector<string>::iterator doc_pack_itr = doc_pack.begin();doc_pack_itr!=doc_pack.end();doc_pack_itr++)
-    {
-        *doc_pack_itr = prep.removeStopwords(prep.segmentation(*doc_pack_itr)," ");
-    }
 
+    int doc_pack_size_f = doc_pack.size();
+
+    for(vector<string>::iterator doc_pack_itr = doc_pack.begin();doc_pack_itr!=doc_pack.end();)
+    {
+
+        string tmp = prep.removeStopwords(prep.segmentation(*doc_pack_itr)," ");
+        if(tmp.length()>0)
+        {
+            *doc_pack_itr = prep.removeStopwords(prep.segmentation(*doc_pack_itr)," ");
+            ++doc_pack_itr;
+        }
+        else
+         {
+            vector<string>::iterator tmp_itr;
+            tmp_itr =doc_pack.erase(doc_pack_itr);
+            doc_pack_itr = tmp_itr;
+            continue;
+
+         }
+       // *doc_pack_itr = prep.segmentation(*doc_pack_itr);
+
+    }
+    int doc_pack_size_a = doc_pack.size();
+    cout<<"before:"<<doc_pack_size_f<<" after:"<<doc_pack_size_a<<endl;
+
+    common::write("/home/zice/userProfile/gdufs_iiip_14105/题录信息.txt",doc_pack);
     model lda;
 
     //char **agrv={"MODEL_STATUS_EST","-dir","dfile","model"};
@@ -67,7 +82,6 @@ int main()
     cout<<"init error"<<endl;
 	return 1;
     }
-
     if (lda.model_status == MODEL_STATUS_EST || lda.model_status == MODEL_STATUS_ESTC) {
 	// parameter estimation
 	lda.estimate();

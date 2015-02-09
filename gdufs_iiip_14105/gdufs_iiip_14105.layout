@@ -1,34 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Debug" />
-	<File name="include/WeiboEntity_simplify.h" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="GibbsLDA/strtokenizer.cpp" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="436" topLine="0" />
+			<Cursor1 position="1716" topLine="32" />
 		</Cursor>
+		<Folding>
+			<Collapse line="29" />
+			<Collapse line="33" />
+		</Folding>
 	</File>
-	<File name="GibbsLDA/main_lda.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
+	<File name="src/databaseAccess.cpp" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="3" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1047" topLine="26" />
-		</Cursor>
-	</File>
-	<File name="include/userProfile.h" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="5" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="53" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src/preprocess.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="373" topLine="2" />
-		</Cursor>
-	</File>
-	<File name="include/weiboUser.h" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="4" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="190" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="GibbsLDA/model.h" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="3749" topLine="97" />
+			<Cursor1 position="2154" topLine="97" />
 		</Cursor>
 	</File>
 	<File name="include/WeiboEntity  .h" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="4" zoom_2="0">
@@ -36,91 +20,121 @@
 			<Cursor1 position="794" topLine="8" />
 		</Cursor>
 	</File>
-	<File name="nlpir/include/NLPIR.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="3700" topLine="81" />
-		</Cursor>
-	</File>
-	<File name="src/personalInfo.cpp" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="include/common.h" open="1" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="0" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="nlpir/main_nlpir.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="main.cpp" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="639" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="include/databaseAccess.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="3" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="13" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="include/preprocess.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="205" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="main.cpp" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="6" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="481" topLine="12" />
+			<Cursor1 position="1190" topLine="15" />
 		</Cursor>
 		<Folding>
+			<Collapse line="13" />
+			<Collapse line="23" />
 			<Collapse line="27" />
-			<Collapse line="34" />
-			<Collapse line="39" />
 		</Folding>
 	</File>
-	<File name="GibbsLDA/model.cpp" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="4" zoom_2="0">
+	<File name="GibbsLDA/model.cpp" open="1" top="0" tabpos="14" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="3692" topLine="13" />
+			<Cursor1 position="22955" topLine="1024" />
 		</Cursor>
 		<Folding>
 			<Collapse line="0" />
 			<Collapse line="23" />
-			<Collapse line="42" />
-			<Collapse line="43" />
-			<Collapse line="47" />
-			<Collapse line="51" />
-			<Collapse line="55" />
-			<Collapse line="56" />
-			<Collapse line="57" />
-			<Collapse line="63" />
-			<Collapse line="64" />
-			<Collapse line="65" />
-			<Collapse line="71" />
-			<Collapse line="72" />
-			<Collapse line="73" />
-			<Collapse line="79" />
-			<Collapse line="83" />
-			<Collapse line="87" />
-			<Collapse line="88" />
-			<Collapse line="89" />
-			<Collapse line="95" />
-			<Collapse line="96" />
-			<Collapse line="97" />
-			<Collapse line="104" />
-			<Collapse line="105" />
-			<Collapse line="106" />
-			<Collapse line="112" />
-			<Collapse line="113" />
-			<Collapse line="114" />
-			<Collapse line="120" />
-			<Collapse line="121" />
-			<Collapse line="122" />
-			<Collapse line="128" />
-			<Collapse line="132" />
-			<Collapse line="136" />
-			<Collapse line="137" />
-			<Collapse line="138" />
-			<Collapse line="144" />
-			<Collapse line="145" />
-			<Collapse line="146" />
 		</Folding>
 	</File>
-	<File name="GibbsLDA/utils.h" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="nlpir/main_nlpir.cpp" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1092" topLine="21" />
+			<Cursor1 position="275" topLine="6" />
+		</Cursor>
+	</File>
+	<File name="src/userProfile.cpp" open="0" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src/common.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="191" topLine="6" />
+		</Cursor>
+		<Folding>
+			<Collapse line="22" />
+			<Collapse line="44" />
+			<Collapse line="63" />
+		</Folding>
+	</File>
+	<File name="GibbsLDA/model.h" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3366" topLine="78" />
+		</Cursor>
+	</File>
+	<File name="src/preprocess.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="178" topLine="3" />
+		</Cursor>
+		<Folding>
+			<Collapse line="31" />
+			<Collapse line="36" />
+			<Collapse line="42" />
+			<Collapse line="61" />
+			<Collapse line="74" />
+			<Collapse line="83" />
+			<Collapse line="95" />
+		</Folding>
+	</File>
+	<File name="src/personalInfo.cpp" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="GibbsLDA/constants.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="7" />
+		</Cursor>
+	</File>
+	<File name="GibbsLDA/main_lda.cpp" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="919" topLine="19" />
+		</Cursor>
+	</File>
+	<File name="include/personalInfo.h" open="1" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="3" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="68" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="GibbsLDA/utils.cpp" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1156" topLine="26" />
+		</Cursor>
+		<Folding>
+			<Collapse line="37" />
+			<Collapse line="88" />
+		</Folding>
+	</File>
+	<File name="GibbsLDA/dataset.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3319" topLine="146" />
+		</Cursor>
+	</File>
+	<File name="GibbsLDA/utils.h" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1092" topLine="12" />
+		</Cursor>
+	</File>
+	<File name="include/WeiboEntity_simplify.h" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="436" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="include/userProfile.h" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="5" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="53" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="GibbsLDA/strtokenizer.h" open="0" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1187" topLine="8" />
 		</Cursor>
 	</File>
 	<File name="src/WeiboEntity  .cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -128,45 +142,29 @@
 			<Cursor1 position="133" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="src/databaseAccess.cpp" open="1" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="3" zoom_2="0">
+	<File name="GibbsLDA/dataset.cpp" open="1" top="0" tabpos="13" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="440" topLine="13" />
-		</Cursor>
-		<Folding>
-			<Collapse line="62" />
-			<Collapse line="77" />
-		</Folding>
-	</File>
-	<File name="GibbsLDA/dataset.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="3319" topLine="55" />
-		</Cursor>
-		<Folding>
-			<Collapse line="37" />
-		</Folding>
-	</File>
-	<File name="GibbsLDA/dataset.cpp" open="1" top="1" tabpos="5" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2620" topLine="49" />
-		</Cursor>
-		<Folding>
-			<Collapse line="33" />
-			<Collapse line="49" />
-		</Folding>
-	</File>
-	<File name="GibbsLDA/utils.cpp" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2177" topLine="85" />
+			<Cursor1 position="1284" topLine="32" />
 		</Cursor>
 	</File>
-	<File name="include/personalInfo.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="3" zoom_2="0">
+	<File name="include/preprocess.h" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="68" topLine="0" />
+			<Cursor1 position="421" topLine="13" />
 		</Cursor>
 	</File>
-	<File name="GibbsLDA/strtokenizer.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="nlpir/include/NLPIR.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="0" topLine="3" />
+			<Cursor1 position="3700" topLine="81" />
+		</Cursor>
+	</File>
+	<File name="include/weiboUser.h" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="4" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="190" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="include/databaseAccess.h" open="1" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="3" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="13" topLine="0" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

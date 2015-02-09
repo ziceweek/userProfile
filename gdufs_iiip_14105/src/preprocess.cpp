@@ -12,10 +12,10 @@ preprocess::preprocess()
     {
         cout<<"init nlpir success!";
     }else{
-        cout<<"fail to init nlpir!";
+        cout<<"fail to init nlpir!=）））";
     }
     // add user defined lexicon
-    if(1)
+    if(0)
     {
         loadUserDict("/home/zice/userProfile/gdufs_iiip_14105/dict/user_defined_keywords.txt");
     }
@@ -27,7 +27,6 @@ preprocess::~preprocess()
 {
     //dtor
 }
-
 
 void preprocess::loadUserDict(string path)
 {
