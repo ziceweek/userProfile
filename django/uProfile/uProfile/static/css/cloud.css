@@ -1,0 +1,24 @@
+#tagsList {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    margin: -50px auto;
+    /*background: #24313d;*/
+    background-image: url("C:\\Users\\Administrator\\WebstormProjects\\userProfile\\css\\img\\tagcloud.JPG");
+}
+
+#tagsList a {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    font-family: Microsoft YaHei;
+    color: #ff5c4b;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 3px 6px;
+}
+
+#tagsList a:hover {
+    color: #8f87ff;
+    letter-spacing: 2px;
+}

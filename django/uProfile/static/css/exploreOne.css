@@ -1,0 +1,87 @@
+body,p,ul,li,h1,h2,h3{
+    padding: 0;
+    margin: 0;
+    outline: 0;
+    border: 0;
+    font-size: 100%;
+    font-weight: normal;
+    font-family: Microsoft YaHei;
+}
+a{
+    text-decoration: none;
+}
+
+.content{
+    width: 960px;
+    margin:0 auto;
+}
+#top{
+    background-color: #333366;
+    color: white;
+    padding: 10px 0;
+
+}
+
+
+#statistic_info{
+    /*background-color: #fffde0;*/
+    padding: 20px 0;
+}
+#statistic_info .content{
+    height: 280px;
+}
+#statistic_info .content>div{
+    float: left;
+    margin: 20px;
+}
+#statistic_info #avatar{
+    width: 100px;
+    height: 200px;
+    /*background-color: lightslategrey;*/
+}
+#avatar img{
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    border-radius: 50px;
+}
+#avatar h3{
+    margin-top: 10px;
+    text-align: center;
+    color: #69696a;
+}
+#statistic_info .content h3{
+    margin-bottom: 15px;
+    font-size: 70%;
+
+}
+#active_chart{
+    width: 550px;
+}
+
+#influence{
+    color: #509dc7;
+}
+#frequency{
+    color: #ff4e00 ;
+}
+#cloud{
+    width: 500px;
+    height: 500px;
+    float: left;
+
+}
+
+#client_chart h3{
+    text-align: center;
+    margin-top: 15px;
+
+}
+
+#tag_cloud{
+    padding-top: 200px;
+
+}
+#daily_weibo{
+    margin-top: 200px;
+}

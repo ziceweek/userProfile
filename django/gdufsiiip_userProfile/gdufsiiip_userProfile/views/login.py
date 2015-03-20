@@ -43,7 +43,7 @@ def goto_get_authorize_page(request):
 
 
 
-def welcome(request):
-    content = client.statuses.user_timeline.get()
-    return render_to_response(content)
+# def welcome(request):
+    # content = client.statuses.user_timeline.get()
+    # return render_to_response(content)
 

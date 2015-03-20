@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>探索大V的粉丝们</title>
+    <link rel="stylesheet" href="../../../css/exploreV.css" />
+    <style>
+        body,p,ul,li,h1,h2,h3{
+    padding: 0;
+    margin: 0;
+    outline: 0;
+    border: 0;
+    font-size: 100%;
+    font-weight: normal;
+    font-family: Microsoft YaHei;
+}
+a{
+    text-decoration: none;
+}
+
+.content{
+    width: 960px;
+    margin:0 auto;
+}
+#top{
+    background-color: #333366;
+    color: white;
+    padding: 10px 0;
+
+}
+#tip{
+    background-color: #262640;
+    color: white;
+    padding: 5px 0;
+    font-size: 70%;
+    color: #b5b5ba;
+}
+
+#pie_charts{
+    background-color: #fffde0;
+    padding: 20px 0;
+}
+#pie_charts .content{
+    height: 280px;
+}
+#pie_charts .content>div{
+    float: left;
+    margin: 20px;
+
+}
+#pie_charts .content h3{
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+#bar_charts{
+
+    padding-top: 50px;
+
+}
+#bar_charts .content{
+    height: 200px;
+}
+.bar{
+    float: left;
+    margin: 0 20px;
+
+}
+.bar h3{
+    margin-bottom: 15px;
+}
+
+#cloud{
+    width: 500px;
+    height: 500px;
+    float: left;
+
+}
+    </style>
+</head>
+<body>
+
+<div id="top">
+    <div class="content">
+        <span>微博用户画像系统</span>
+        <input type="text"/>
+        <input type="button" value="Analyse"/>
+    </div>
+
+</div>
+<div id="tip">
+    <div class="content">
+        <p>对用户"<span id="user_id">子弹</span>"的分析结果如下</p>
+    </div>
+</div>
+<div id="pie_charts" >
+    <div class="content">
+        <div id="sex_chart">
+            <div class="pie"></div>
+            <h3>sexuality</h3>
+        </div>
+        <div  id="active_chart">
+            <div class="pie"></div>
+            <h3>active</h3>
+        </div>
+        <div  id="age_chart">
+            <div class="pie"></div>
+            <h3>age</h3>
+        </div>
+        <div  id="client_chart">
+            <div class="pie"></div>
+            <h3>client</h3>
+        </div>
+    </div>
+</div>
+<div id="bar_charts">
+    <div class="content">
+        <div class="bar" id="region_chart">
+            <h3>region</h3>
+        </div>
+        <div class="bar" id="edu_chart">
+            <h3>education</h3>
+        </div>
+    </div>
+</div>
+<div id="tag_cloud">
+        <div  class="content">
+
+            <div id="cloud">
+                <img src="C:\Users\Administrator\WebstormProjects\userProfile\css\img\tagcloud.JPG" alt=""/>
+            </div>
+            <div id="tag_bar">
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</body>
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<!--pie chart-->
+<script>
+
+    var width = 200;
+    var height = 200;
+    var dataset = [ 30 , 10 , 43 , 55 , 13 ];
+
+    var svg = d3.selectAll(".pie").append("svg")
+            .attr("width",width)
+            .attr("height",height);
+
+    var pie = d3.layout.pie();
+
+    var outerRadius = width / 2;
+    var innerRadius = 0;
+    var arc = d3.svg.arc()
+            .innerRadius(innerRadius)
+            .outerRadius(outerRadius);
+
+    var color = d3.scale.category10();
+
+    var arcs = svg.selectAll("g")
+            .data(pie(dataset))
+            .enter()
+            .append("g")
+            .attr("transform","translate("+outerRadius+","+outerRadius+")");
+
+    arcs.append("path")
+            .attr("fill",function(d,i){
+                return color(i);
+            })
+            .attr("d",function(d){
+                return arc(d);
+            });
+
+    arcs.append("text")
+            .attr("transform",function(d){
+                return "translate(" + arc.centroid(d) + ")";
+            })
+            .attr("text-anchor","middle")
+            .text(function(d){
+                return d.value;
+            });
+
+    console.log(dataset);
+    console.log(pie(dataset));
+
+</script>
+<!--bar chart-->
+<script>
+    var width = 400;
+    var height = 250;
+    var svg = d3.selectAll(".bar").append("svg")
+            .attr("width",width)
+            .attr("height",height);
+
+    var dataset = [ 30 , 20 , 45 , 12 , 21 ];
+
+    //比例尺设定
+    var wx = d3.scale.linear()
+            .domain([0,d3.max(dataset)])     //值域
+            .range([0,500]);                 //定义域
+
+    svg.selectAll("rect")
+            .data(dataset)
+            .enter()        //但需要绑定的数据比数据集合的元素少时，自动增加
+            .append("rect")
+            .attr("x",0)
+            .attr("y",function(d,i){
+                return i * 30;
+            })
+            .attr("width",wx)
+            .attr("height",22)
+            .attr("fill","#7095ff");
+
+
+
+</script>
+<!--tag_cloud_bar-->
+<script>
+    var width = 400;
+    var height = 500;
+    var svg = d3.selectAll("#tag_bar").append("svg")
+            .attr("width",width)
+            .attr("height",height);
+
+    var dataset = [ 30 , 20 , 45 , 12 , 21 ];
+
+    //比例尺设定
+    var wx = d3.scale.linear()
+            .domain([0,d3.max(dataset)])     //值域
+            .range([0,500]);                 //定义域
+
+    svg.selectAll("rect")                                                                                                                                                                                                                                           mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
+            .data(dataset)
+            .enter()        //但需要绑定的数据比数据集合的元素少时，自动增加
+            .append("rect")
+            .attr("x",0)
+            .attr("y",function(d,i){
+                return i * 30;
+            })
+            .attr("width",wx)
+            .attr("height",22)
+            .attr("fill","#7095ff");
+
+
+
+</script>
+
+</html>

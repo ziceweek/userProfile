@@ -1,0 +1,35 @@
+# encoding=utf-8
+from pymongo import MongoClient
+import json
+
+# 将本地的大V及其粉丝id读入数据库
+
+import os
+
+all_V = ["A1", "A2", "B1", "B2", "C1", "C2"]
+
+path = '/run/media/zice/DM/userProfile/'
+
+client = MongoClient('localhost', 27017)
+db = client['test']
+collection_daV = db['daV']
+
+for dav in all_V:
+    daV_id = dav
+    fileList = os.listdir(path+dav)
+    fans_list = []
+    for filename in fileList:
+        fans_list.append(filename.split('.')[0])
+
+    a_daV = {
+        "id": daV_id,
+        "fans": fans_list
+    }
+
+    # collection_daV.insert(a_daV)
+    fans_list = []
+
+for fan in collection_daV.find():
+    print fan
+
+

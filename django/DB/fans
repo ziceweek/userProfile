@@ -1,0 +1,88 @@
+# encoding=utf-8
+from pymongo import MongoClient
+import json
+import os
+
+
+# 旧版 不用
+
+client = MongoClient('localhost', 27017)
+db = client['test']
+collection_fans = db['fans']
+
+all_V = ["A1", "A2", "B1", "B2", "C1", "C2"]
+all_folder = ["user", "info", "weibo"]
+
+# 将user文件夹下的用户个人信息存入数据库
+def read_user(dav):
+    path = "/run/media/zice/DM/userProfile/"+dav+"user/"
+    file_list = os.listdir(path)
+    fans = []
+    for info_file in file_list:
+        f = open(path+info_file)
+        response = f.read()
+        oktext = response.replace('{{', '[{').replace('}}}', '}]}')
+        # print file
+        s = json.loads(oktext)
+        user = s["user"]
+        a_fan = {
+            "id": user["id"],
+            "name": user["name"],
+            "location": user["location"],
+            "gender": user["gender"],
+            "followers_count": user["followers_count"],
+            "friends_count": user["friends_count"],
+            "statuses_count":user["statuses_count"],
+            "credit_score": user["credit_score"],
+            "tags": s["tags"]
+        }
+
+        fans.append(a_fan)
+    dav_fans = {
+        "daV": dav,
+        "fans": fans
+    }
+    collection_fans.insert(dav_fans)
+    print dav+"\n"
+
+
+def read_info(dav):
+    path = "/run/media/zice/DM/userProfile/"+dav+"info/"
+    file_list = os.listdir(path)
+    fans = []
+    for info_file in file_list:
+        f = open(path+info_file)
+        response = f.read()
+        s = json.loads(response)
+        user = s["user"]
+        a_fan = {
+            "id": user["id"],
+            "name": user["name"],
+            "location": user["location"],
+            "gender": user["gender"],
+            "followers_count": user["followers_count"],
+            "friends_count": user["friends_count"],
+            "credit_score": user["credit_score"],
+            "tags": s["tags"]
+        }
+
+        fans.append(a_fan)
+    dav_fans = {
+        "daV": dav,
+        "fans": fans
+    }
+    collection_fans.insert(dav_fans)
+    print dav+"\n"
+
+
+for v in all_V:
+    read_user(v)
+
+
+for fan in collection_fans.find():
+    print fan
+
+
+
+
+

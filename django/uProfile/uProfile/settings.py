@@ -27,6 +27,7 @@ TEMPLATE_DEBUG = True
 # template path
 TEMPLATE_DIRS = (
     '/home/zice/django/uProfile/uProfile/template/',
+    '/home/zice/userProfile/django/uProfile/uProfile/template/up',
     os.path.join(os.path.dirname(__file__), 'template'),
 )
 
@@ -103,4 +104,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = '../static/'
+# STATICFILES_DIRS = (
+#     os.path.join(BASE_DIR, "static"),
+#     '/static/',
+# )
+
+STATICFILES_DIRS = (
+    os.path.join(os.path.dirname(__file__), '../static/').replace('\\','/'),
+)
